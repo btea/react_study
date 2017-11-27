@@ -1,3 +1,7 @@
+
+
+
+
 // 1、Dispatcher  AppDispatcher
 // 几乎所有的项目都只需要拥有一个Dispatcher，创造Dispatcher对象
 import {Dispatcher} from 'flux';
@@ -7,7 +11,7 @@ export default new Dispatcher();
 export const INCREMENT = 'increment';
 export const DECREMENT = 'decrement';
 
-// Actions.js中定义action构造函数
+// Actions.js中定义action构造函数  每个Action都是一个对象，包含一个actionType属性(说明动作类型)和一些其他属性(用来传递数据)
 import * as ActionTypes from './ActionTypes.js';
 import AppDispatcher from './AppDisptcher.js';
 
@@ -26,6 +30,8 @@ export const decrement = (counterCaption) => {
 };
 
 // 3、store 一个Store也是一个对象，这个对象存储应用状态，同时还要接受Dispatcher派发的动作，根据动作来决定是否需要更新应用状态
+// store保存整个应用的状态，它的角色有点像MVC框架之中的Model
+
 
 // src/stores/CounterStore.js
 const counterValues = {
